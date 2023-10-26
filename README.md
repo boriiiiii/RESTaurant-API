@@ -66,14 +66,14 @@ Display an items depending on his id.
 
 • Endpoint: PUT /items/:id_item
 
-• Description: Update an existing item by providing the itemId as a parameter in the URL. Send a PUT request with the updated item data.
+• Description: Update an existing item by providing the item's ID as a parameter in the URL. Send a PUT request with the updated item data.
 
 
 •**Delete Item**
 
 •Endpoint: DELETE /items/:id_item
 
-•Description: Delete an item from the database by providing the itemId as a parameter in the URL.
+•Description: Delete an item from the database by providing the  as a item's parameter in the URL.
 
 
 
