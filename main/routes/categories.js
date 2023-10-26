@@ -1,12 +1,28 @@
 var express = require('express');
 const mysql = require("mysql");
 var router = express.Router();
+const basicAuth = require('basic-auth');
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     database: 'restaurant_database'
 });
+
+// Middleware for Basic Authentication
+function authMiddleware(req, res, next) {
+    const user = basicAuth(req);
+
+    if (!user || user.name !== 'admin' || user.pass !== 'admin') {
+        res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+        res.sendStatus(401); // Unauthorized
+        return;
+    }
+
+    // If authentication is successful, continue to the next middleware
+    next();
+}
+
 
 /* GET categories with filtering. */
 router.get('/', function (req, res, next) {
@@ -43,7 +59,7 @@ router.get('/:id_categorie', function (req, res, next) {
     });
 });
 
-router.post('/post', (req,res) => {
+router.post('/post', authMiddleware,(req,res) => {
     const id_categorie = req.body.id_categorie;
     const categorie_name = req.body.categorie_name;
 
@@ -56,7 +72,7 @@ router.post('/post', (req,res) => {
     });
 });
 
-router.put('/put/:id_categorie', (req, res) => {
+router.put('/put/:id_categorie', authMiddleware,(req, res) => {
     const id_categorie = req.params.id_categorie;
     const new_categorie_name = req.body.categorie_name;
 
@@ -87,7 +103,7 @@ router.put('/put/:id_categorie', (req, res) => {
 });
 
 
-router.delete('/delete/:id_categorie', (req, res) => {
+router.delete('/delete/:id_categorie', authMiddleware,(req, res) => {
     const id_categorie = req.params.id_categorie;
 
     con.query('SELECT categorie_name FROM categories WHERE id_categorie = ?', [id_categorie], (err, result) => {

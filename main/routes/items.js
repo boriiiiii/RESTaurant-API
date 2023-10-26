@@ -1,5 +1,6 @@
 var express = require('express');
 const mysql = require("mysql");
+const basicAuth = require('basic-auth');
 var router = express.Router()
 
 const con = mysql.createConnection({
@@ -9,6 +10,19 @@ const con = mysql.createConnection({
     database: 'restaurant_database'
 });
 
+// Middleware for Basic Authentication
+function authMiddleware(req, res, next) {
+    const user = basicAuth(req);
+
+    if (!user || user.name !== 'admin' || user.pass !== 'admin') {
+        res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+        res.sendStatus(401); // Unauthorized
+        return;
+    }
+
+    // If authentication is successful, continue to the next middleware
+    next();
+}
 /* GET items with filtering. */
 router.get('/', function (req, res, next) {
     const categorie_name = req.query.categorie_name;
@@ -56,7 +70,7 @@ router.get('/:id_item', function (req, res, next) {
     });
 });
 
-router.post('/post', (req,res) =>{
+router.post('/post', authMiddleware,(req,res) =>{
     const id_item = req.body.id_item;
     const categorie_name = req.body.categorie_name;
     const name = req.body.name;
@@ -72,7 +86,7 @@ router.post('/post', (req,res) =>{
     })
 })
 
-router.put('/put/:id_item',(req,res)=>{
+router.put('/put/:id_item',authMiddleware,(req,res)=>{
     const id_item = req.params.id_item;
     const new_categorie_name = req.body.categorie_name;
     const new_name = req.body.name;
@@ -88,7 +102,7 @@ router.put('/put/:id_item',(req,res)=>{
     })
 })
 
-router.delete('/delete/:id_item',(req,res)=>{
+router.delete('/delete/:id_item',authMiddleware,(req,res)=>{
     const id_item = req.params.id_item
 
     con.query('DELETE FROM `items` WHERE id_item = ?', id_item,(err,result) =>{

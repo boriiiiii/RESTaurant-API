@@ -1,12 +1,27 @@
 var express = require('express');
 const mysql = require("mysql");
 var router = express.Router();
+const basicAuth = require('basic-auth');
 const con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
     database: 'restaurant_database'
 });
+
+// Middleware for Basic Authentication
+function authMiddleware(req, res, next) {
+    const user = basicAuth(req);
+
+    if (!user || user.name !== 'admin' || user.pass !== 'admin') {
+        res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+        res.sendStatus(401); // Unauthorized
+        return;
+    }
+
+    // If authentication is successful, continue to the next middleware
+    next();
+}
 
 /* GET formulas with filtering. */
 router.get('/', function (req, res, next) {
@@ -51,7 +66,7 @@ router.get('/:id_formula', function (req, res, next) {
     });
 });
 
-router.post('/post', (req,res) =>{
+router.post('/post', authMiddleware,(req,res) =>{
     const id_formula = req.body.id_formula;
     const formula_name = req.body.categorie_name;
     const categorie_name = req.body.categorie_name;
@@ -66,7 +81,7 @@ router.post('/post', (req,res) =>{
     })
 })
 
-router.put('/put/:id_formula',(req,res)=>{
+router.put('/put/:id_formula',authMiddleware,(req,res)=>{
     const id_formula = req.params.id_formula;
     const new_formula_name = req.body.formula_name;
     const new_categorie_name = req.body.categorie_name;
@@ -81,7 +96,7 @@ router.put('/put/:id_formula',(req,res)=>{
     })
 })
 
-router.delete('/delete/:id_formula',(req,res)=>{
+router.delete('/delete/:id_formula',authMiddleware,(req,res)=>{
     const id_formula = req.params.id_formula
 
     con.query('DELETE FROM `formulas` WHERE id_categorie = ?', id_formula,(err,result) =>{
