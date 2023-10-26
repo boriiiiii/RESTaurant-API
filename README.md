@@ -60,20 +60,20 @@ Display an items depending on his id.
 
 •Endpoint: POST /items
 
-•Description: Add a new item to the database. Send a POST request with the item data to this endpoint.
+•Description: Add a new item to the database. Send a POST request with the item data to this endpoint. But only administrators can execute this action.
 
 • **Update Item**
 
 • Endpoint: PUT /items/:id_item
 
-• Description: Update an existing item by providing the item's ID as a parameter in the URL. Send a PUT request with the updated item data.
+• Description: Update an existing item by providing the item's ID as a parameter in the URL. Send a PUT request with the updated item data. But only administrators can execute this action.
 
 
 •**Delete Item**
 
 •Endpoint: DELETE /items/:id_item
 
-•Description: Delete an item from the database by providing the  as a item's parameter in the URL.
+•Description: Delete an item from the database by providing the  as a item's parameter in the URL. But only administrators can execute this action.
 
 
 
@@ -102,19 +102,19 @@ Display an items depending on his id.
 
 •Endpoint: POST /formulas
 
-•Description: Add a new formula to the database. Send a POST request with the formula data to this endpoint.
+•Description: Add a new formula to the database. Send a POST request with the formula data to this endpoint. But only administrators can execute this action.
 
 •**Update Formula**
 
 •Endpoint: PUT /formulas/:id_formula
 
-•Description: Update an existing formula by providing the formulaId as a parameter in the URL. Send a PUT request with     the updated formula data.
+•Description: Update an existing formula by providing the formulaId as a parameter in the URL. Send a PUT request with the updated formula data. But only administrators can execute this action.
 
 •**Delete Formula**
 
 •Endpoint: DELETE /formulas/:id_formula
 
-•Description: Delete a formula from the database by providing the formulaId as a parameter in the URL.
+•Description: Delete a formula from the database by providing the formulaId as a parameter in the URL. But only administrators can execute this action.
 
 
 ### Categories
@@ -138,19 +138,19 @@ Display an items depending on his id.
 
 •Endpoint: POST /categories
 
-•Description: Add a new category to the database. Send a POST request with the category data to this endpoint.
+•Description: Add a new category to the database. Send a POST request with the category data to this endpoint. But only administrators can execute this action.
 
 •**Update Category**
 
 •Endpoint: PUT /categories/:id_category
 
-•Description: Update an existing category by providing the categoryId as a parameter in the URL. Send a PUT request with   the updated category data.
+•Description: Update an existing category by providing the categoryId as a parameter in the URL. Send a PUT request with   the updated category data. But only administrators can execute this action.
 
 •**Delete Category**
 
 •Endpoint: DELETE /categories/:id_category
 
-•Description: Delete a category from the database by providing the categoryId as a parameter in the URL.
+•Description: Delete a category from the database by providing the categoryId as a parameter in the URL. But only administrators can execute this action.
 
 
 You can interact with these endpoints using tools like Postman, providing the necessary data and HTTP methods (GET, POST, PUT, DELETE) to manage your items, formulas, and categories in the API.
