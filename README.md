@@ -106,6 +106,6 @@ Enjoy using your Express API for managing your data!
 
 If you have any questions or need further assistance, please feel free to reach out for support:
 
-  E-mail : boris.douady@epitech.digital
+        •**E-mail** : boris.douady@epitech.digital
 
-  Discord : boriiiiiiiii
+        •**Discord** : boriiiiiiiii
