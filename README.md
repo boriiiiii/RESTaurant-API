@@ -20,11 +20,12 @@ To run the API, follow these steps:
 
 4. Install the required dependencies:
 `npm install`
+`npm i express mysql`
 
-5. Start the API:
+6. Start the API:
 `npm start`
 
-6. Open a web browser and visit http://localhost:3000/ (or your default port). You should see your Express project up and running.
+7. Open a web browser and visit http://localhost:3000/ (or your default port). You should see your Express project up and running.
 The API is now running locally, and you can use the provided endpoints to interact with your database.
 
 ## API Endpoints
