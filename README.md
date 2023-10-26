@@ -32,22 +32,22 @@ The API is now running locally, and you can use the provided endpoints to intera
 ### Items
 The API provides the following endpoints for managing items:
 
-• #### Get All Items
+• **Get All Items**
 
   •Endpoint: GET /items
   •Description: Retrieve a list of all items in the database.
 
-•#### Add New Item
+•**Add New Item**
 
   •Endpoint: POST /items
   •Description: Add a new item to the database. Send a POST request with the item data to this endpoint.
 
-•#### Update Item
+•**Update Item**
 
   •Endpoint: PUT /items/:itemId
   •Description: Update an existing item by providing the itemId as a parameter in the URL. Send a PUT request with the        updated item data.
 
-•#### Delete Item
+•**Delete Item**
 
   •Endpoint: DELETE /items/:itemId
   •Description: Delete an item from the database by providing the itemId as a parameter in the URL.
@@ -55,22 +55,22 @@ The API provides the following endpoints for managing items:
 ### Formulas
 The API provides similar CRUD operations for managing formulas:
 
-•#### Get All Formulas
+•**Get All Formulas**
 
   •Endpoint: GET /formulas
   •Description: Retrieve a list of all formulas in the database.
 
-•#### Add New Formula
+•**Add New Formula**
 
   •Endpoint: POST /formulas
   •Description: Add a new formula to the database. Send a POST request with the formula data to this endpoint.
 
-•#### Update Formula
+•**Update Formula**
 
   •Endpoint: PUT /formulas/:formulaId
   •Description: Update an existing formula by providing the formulaId as a parameter in the URL. Send a PUT request with     the updated formula data.
 
-•#### Delete Formula
+•**Delete Formula**
 
   •Endpoint: DELETE /formulas/:formulaId
   •Description: Delete a formula from the database by providing the formulaId as a parameter in the URL.
@@ -78,22 +78,22 @@ The API provides similar CRUD operations for managing formulas:
 ### Categories
 You can also manage categories using the API:
 
-•#### Get All Categories
+•**Get All Categories**
 
   •Endpoint: GET /categories
   •Description: Retrieve a list of all categories in the database.
 
-•#### Add New Category
+•**Add New Category**
 
   •Endpoint: POST /categories
   •Description: Add a new category to the database. Send a POST request with the category data to this endpoint.
 
-•#### Update Category
+•**Update Category**
 
   •Endpoint: PUT /categories/:categoryId
   •Description: Update an existing category by providing the categoryId as a parameter in the URL. Send a PUT request with   the updated category data.
 
-•#### Delete Category
+•**Delete Category**
 
   •Endpoint: DELETE /categories/:categoryId
   •Description: Delete a category from the database by providing the categoryId as a parameter in the URL.
