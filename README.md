@@ -52,6 +52,7 @@ The API provides the following endpoints for managing items:
   •Endpoint: DELETE /items/:itemId
   •Description: Delete an item from the database by providing the itemId as a parameter in the URL.
 
+
 ### Formulas
 The API provides similar CRUD operations for managing formulas:
 
@@ -74,6 +75,7 @@ The API provides similar CRUD operations for managing formulas:
 
   •Endpoint: DELETE /formulas/:formulaId
   •Description: Delete a formula from the database by providing the formulaId as a parameter in the URL.
+
 
 ### Categories
 You can also manage categories using the API:
