@@ -25,7 +25,7 @@ Github CLI :`gh repo clone boriiiiii/RESTaurant-API`
 
 4. Install the required dependencies:
 `npm install`
-`npm i express mysql`
+`npm i express mysql basic-auth`
 
 5. Start the API:
 `npm start`
