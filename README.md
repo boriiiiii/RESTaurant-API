@@ -45,6 +45,7 @@ The API provides the following endpoints for managing items:
 •**Update Item**
 
   •Endpoint: PUT /items/:itemId
+  
   •Description: Update an existing item by providing the itemId as a parameter in the URL. Send a PUT request with the        updated item data.
 
 •**Delete Item**
