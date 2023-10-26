@@ -24,13 +24,24 @@ To run the API, follow these steps:
 5. Start the API:
 `npm start`
 
-6. Open a web browser and visit http://localhost:3000/. You should see your Express project up and running.
+6. Open a web browser and visit http://localhost:3000/ (or your default port). You should see your Express project up and running.
 The API is now running locally, and you can use the provided endpoints to interact with your database.
 
 ## API Endpoints
 
 ### Items
 The API provides the following endpoints for managing items:
+• **/items**
+
+Display all items in my database.
+
+• **/items?parameters**
+
+Display all items matching filters
+
+• **/item/:id_item**
+
+Display an items depending on his id.
 
 • **Get All Items**
 
@@ -44,18 +55,30 @@ The API provides the following endpoints for managing items:
 
 • **Update Item**
 
-• Endpoint: PUT /items/:itemId
+• Endpoint: PUT /items/:id_item
 • Description: Update an existing item by providing the itemId as a parameter in the URL. Send a PUT request with the updated item data.
 
 
 •**Delete Item**
 
-•Endpoint: DELETE /items/:itemId
+•Endpoint: DELETE /items/:id_item
 •Description: Delete an item from the database by providing the itemId as a parameter in the URL.
 
 
 ### Formulas
 The API provides similar CRUD operations for managing formulas:
+
+• **/formulas**
+
+Display all items in my database.
+
+• **/formulas?parameters**
+
+Display all items matching filters
+
+• **/formulas/:id_formula**
+
+Display an items depending on his id.
 
 •**Get All Formulas**
 
@@ -69,17 +92,25 @@ The API provides similar CRUD operations for managing formulas:
 
 •**Update Formula**
 
-•Endpoint: PUT /formulas/:formulaId
+•Endpoint: PUT /formulas/:id_formula
 •Description: Update an existing formula by providing the formulaId as a parameter in the URL. Send a PUT request with     the updated formula data.
 
 •**Delete Formula**
 
-•Endpoint: DELETE /formulas/:formulaId
+•Endpoint: DELETE /formulas/:id_formula
 •Description: Delete a formula from the database by providing the formulaId as a parameter in the URL.
 
 
 ### Categories
 You can also manage categories using the API:
+
+• **/categories**
+
+Display all items in my database.
+
+• **/cateogries/:id_category**
+
+Display an items depending on his id.
 
 •**Get All Categories**
 
@@ -93,12 +124,12 @@ You can also manage categories using the API:
 
 •**Update Category**
 
-•Endpoint: PUT /categories/:categoryId
+•Endpoint: PUT /categories/:id_category
 •Description: Update an existing category by providing the categoryId as a parameter in the URL. Send a PUT request with   the updated category data.
 
 •**Delete Category**
 
-•Endpoint: DELETE /categories/:categoryId
+•Endpoint: DELETE /categories/:id_category
 •Description: Delete a category from the database by providing the categoryId as a parameter in the URL.
 
 You can interact with these endpoints using tools like Postman, providing the necessary data and HTTP methods (GET, POST, PUT, DELETE) to manage your items, formulas, and categories in the API.
