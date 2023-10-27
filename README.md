@@ -108,7 +108,11 @@ Display an items depending on his id.
 
 •Endpoint: PUT /formulas/:id_formula
 
+<<<<<<< HEAD
 •Description: Update an existing formula by providing the formulaId as a parameter in the URL. Send a PUT request with     the updated formula data. But only administrators can execute this action.
+=======
+•Description: Update an existing formula by providing the formulaId as a parameter in the URL. Send a PUT request with the updated formula data. But only administrators can execute this action.
+>>>>>>> 64ef6f98c99da6793614c61a64cc3fa77944b642
 
 •**Delete Formula**
 
