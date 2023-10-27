@@ -99,7 +99,7 @@ router.put('/put/:id_formula',authMiddleware,(req,res)=>{
 router.delete('/delete/:id_formula',authMiddleware,(req,res)=>{
     const id_formula = req.params.id_formula
 
-    con.query('DELETE FROM `formulas` WHERE id_categorie = ?', id_formula,(err,result) =>{
+    con.query('DELETE FROM `formulas` WHERE id_formula = ?', id_formula,(err,result) =>{
         if (err){
             console.log(err)
         }else{

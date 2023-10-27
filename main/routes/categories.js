@@ -63,7 +63,7 @@ router.post('/post', authMiddleware,(req,res) => {
     const id_categorie = req.body.id_categorie;
     const categorie_name = req.body.categorie_name;
 
-    con.query('INSERT INTO `categorie` VALUES(?,?)', [id_categorie, categorie_name], (err, result) => {
+    con.query('INSERT INTO `categories` VALUES(?,?)', [id_categorie, categorie_name], (err, result) => {
         if (err) {
             console.log(err);
         } else {
